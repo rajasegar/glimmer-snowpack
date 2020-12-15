@@ -1,6 +1,6 @@
 {
   "name": "glimmer-snowpack",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Glimmer.js app template for Snowpack",
   "main": "index.js",
   "scripts": {
@@ -11,9 +11,19 @@
     "lint": "prettier --check \"src/**/*.js\"",
     "deploy": "git push && git push --tags && npm publish"
   },
-  "keywords": [],
+  "keywords": [
+    "glimmer",
+    "snowpack",
+    "create-snowpack-app",
+    "glimmerjs"
+  ],
   "author": "Rajasegar Chandran <rajasegar.c@gmail.com>",
   "license": "MIT",
+   "homepage": "https://github.com/rajasegar/glimmer-snowpack",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rajasegar/glimmer-snowpack"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
