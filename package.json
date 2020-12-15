@@ -1,6 +1,6 @@
 {
   "name": "glimmer-snowpack",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Glimmer.js app template for Snowpack",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   ],
   "author": "Rajasegar Chandran <rajasegar.c@gmail.com>",
   "license": "MIT",
-   "homepage": "https://github.com/rajasegar/glimmer-snowpack",
+  "homepage": "https://github.com/rajasegar/glimmer-snowpack",
   "repository": {
     "type": "git",
     "url": "https://github.com/rajasegar/glimmer-snowpack"
