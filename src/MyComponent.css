@@ -13,3 +13,14 @@
   height: 540px;
 }
 
+body {
+  background: #1E293B;
+  color: #8C9AB1;
+  font-family: sans-serif;
+  padding: 1em;
+  text-align: center;
+}
+
+h1 {
+  color: #F5835F;
+}

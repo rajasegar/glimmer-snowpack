@@ -12,6 +12,7 @@
     "deploy": "git push && git push --tags && npm publish"
   },
   "keywords": [
+    "csa-template",
     "glimmer",
     "snowpack",
     "create-snowpack-app",

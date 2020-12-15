@@ -11,12 +11,15 @@ import { on, action } from '@glimmer/modifier';
 import OtherComponent from './OtherComponent.js';
 import { fn as helper } from '@glimmer/helper';
 
+import './MyComponent.css';
+import logo from './logo.svg';
 
 const myHelper = helper(function (name, greeting) {
   return `Helper:   ${greeting} ${name}`;
 });
 
 class MyComponent extends Component {
+  logo = logo;
   message = 'hello world';
   @tracked count = 55;
 
@@ -40,6 +43,7 @@ setComponentTemplate(
   createTemplate(
     { myHelper, TemplateOnlyComponent, OtherComponent, on },
     `
+      <img src={{this.logo}} width="128"/>
       <h1>Hello {{this.message}}</h1> <br/>
       <p>{{this.count}}</p>
       <p> {{myHelper "foo" "hello" }}</p>
