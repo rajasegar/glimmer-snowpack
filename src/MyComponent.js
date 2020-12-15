@@ -9,7 +9,12 @@ import {
 
 import { on, action } from '@glimmer/modifier';
 import OtherComponent from './OtherComponent.js';
+import { fn as helper } from '@glimmer/helper';
 
+
+const myHelper = helper(function (name, greeting) {
+  return `Helper:   ${greeting} ${name}`;
+});
 
 class MyComponent extends Component {
   message = 'hello world';
@@ -33,10 +38,11 @@ const TemplateOnlyComponent = setComponentTemplate(
 
 setComponentTemplate(
   createTemplate(
-    { TemplateOnlyComponent, OtherComponent, on },
+    { myHelper, TemplateOnlyComponent, OtherComponent, on },
     `
       <h1>Hello {{this.message}}</h1> <br/>
       <p>{{this.count}}</p>
+      <p> {{myHelper "foo" "hello" }}</p>
       <p>Current Locale: {{this.currentLocale}}</p>
       <button {{on "click" this.increment}}>Increment</button>
       <TemplateOnlyComponent @name="Glimmer"/>
