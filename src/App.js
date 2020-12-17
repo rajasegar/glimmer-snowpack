@@ -11,7 +11,7 @@ import { on, action } from '@glimmer/modifier';
 import OtherComponent from './OtherComponent.js';
 import { fn as helper } from '@glimmer/helper';
 
-import './MyComponent.css';
+import './App.css';
 import logo from './logo.svg';
 
 const myHelper = helper(function (name, greeting) {
