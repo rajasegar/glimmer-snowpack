@@ -24,3 +24,11 @@ body {
 h1 {
   color: #F5835F;
 }
+
+a {
+  color: white;
+}
+
+li {
+  list-style: none;
+}

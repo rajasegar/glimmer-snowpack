@@ -8,52 +8,34 @@ import {
 } from '@glimmer/core';
 
 import { on, action } from '@glimmer/modifier';
-import OtherComponent from './OtherComponent.js';
-import { fn as helper } from '@glimmer/helper';
+import { Router } from './GlimmerRouter.js';
 
 import './App.css';
 import logo from './logo.svg';
 
-const myHelper = helper(function (name, greeting) {
-  return `Helper:   ${greeting} ${name}`;
-});
 
-class MyComponent extends Component {
+class App extends Component {
   logo = logo;
-  message = 'hello world';
-  @tracked count = 55;
-
-  get currentLocale() {
-    return getOwner(this).services.locale.currentLocale;
-  }
-
-  @action
-  increment() {
-    this.count++;
-  }
 }
 
-const TemplateOnlyComponent = setComponentTemplate(
-  createTemplate(`<h1>I am rendered by a template only component: {{@name}}</h1>`),
-  templateOnlyComponent()
-);
 
 
 setComponentTemplate(
   createTemplate(
-    { myHelper, TemplateOnlyComponent, OtherComponent, on },
+    { Router },
     `
       <img src={{this.logo}} width="128"/>
-      <h1>Hello {{this.message}}</h1> <br/>
-      <p>{{this.count}}</p>
-      <p> {{myHelper "foo" "hello" }}</p>
-      <p>Current Locale: {{this.currentLocale}}</p>
-      <button {{on "click" this.increment}}>Increment</button>
-      <TemplateOnlyComponent @name="Glimmer"/>
-      <OtherComponent @count="22"/>
+      <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      </nav>
+      <Router/>
     `
   ),
-  MyComponent
+  App
 );
 
-export default MyComponent;
+export default App;
