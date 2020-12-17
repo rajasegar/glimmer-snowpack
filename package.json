@@ -1,6 +1,6 @@
 {
   "name": "glimmer-snowpack",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Glimmer.js app template for Snowpack",
   "main": "index.js",
   "scripts": {
