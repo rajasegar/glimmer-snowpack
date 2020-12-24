@@ -2,15 +2,17 @@ import { renderComponent } from '@glimmer/core';
 import page from 'page';
 import LocaleService from './services/LocaleService.js';
 
-import Home from './pages/Home.js';
-import About from './pages/About.js';
-import Contact from './pages/Contact.js';
-
 export default function(element) {
 
-  page('/', () => {
+  function showPageLoad(ctx, next) {
+    element.innerHTML = 'Loading page...';
+    next();
+  }
+
+  page('/', showPageLoad, () => {
+    import('./pages/Home.js').then(component => {
     element.innerHTML = '';
-    renderComponent(Home, {
+    renderComponent(component.default, {
       element: element,
       owner: {
         services: {
@@ -18,14 +20,19 @@ export default function(element) {
         },
       }
     });
+    });
   });
-  page('/about', () => {
+  page('/about',showPageLoad, () => {
+    import('./pages/About.js').then(component => {
     element.innerHTML = '';
-    renderComponent(About, element);
+    renderComponent(component.default, element);
+    });
   });
-  page('/contact', () => {
+  page('/contact', showPageLoad, () => {
+    import('./pages/Contact.js').then(component => {
     element.innerHTML = '';
-    renderComponent(Contact, element);
+    renderComponent(component.default, element);
+    });
   });
 
   page();
