@@ -12,7 +12,7 @@ npx create-snowpack-app my-awesome-glimmer-app --template glimmer-snowpack
 
 ## Features
 - Build tooling with Snowpack
-- Routing using [page.js](https://github.com/visionmedia/page)
+- Routing using [page.js](https://github.com/visionmedia/page.js)
 - Lazy loading components with dynamic imports
 
 ## Available Scripts
