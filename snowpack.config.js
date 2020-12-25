@@ -18,6 +18,18 @@ module.exports = {
         },
       },
     ],
+    [
+      'snowpack-plugin-terser',
+      {
+        terserOptions: {
+          compress: {
+            arguments: true,
+            passes: 2,
+            unsafe_arrows: true,
+          },
+        },
+      },
+    ],
   ],
   install: [],
   installOptions: {
@@ -27,7 +39,7 @@ module.exports = {
     /* ... */
   },
   buildOptions: {
-    /* ... */
+    minify: false
   },
   proxy: {
     /* ... */
