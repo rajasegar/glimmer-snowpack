@@ -29,6 +29,11 @@ a {
   color: white;
 }
 
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 li {
   list-style: none;
 }
