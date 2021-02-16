@@ -1,3 +1,4 @@
+import page from 'page';
 export default class RouterService {
   registry = [];
 
@@ -7,5 +8,9 @@ export default class RouterService {
 
   get routes() {
     return this.registry.map(r => r);
+  }
+
+  navigate(route) {
+    page(route);
   }
 }

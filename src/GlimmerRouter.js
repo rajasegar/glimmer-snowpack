@@ -1,5 +1,6 @@
 import Component from '@glimmer/component';
 import LocaleService from './services/LocaleService.js';
+import RouterService from './services/RouterService.js';
 import { renderComponent } from '@glimmer/core';
 import Loading from './Loading.js';
 import page from 'page';
@@ -52,6 +53,7 @@ function startRouting(element, router) {
           owner: {
             services: {
               locale: new LocaleService('en_US'),
+              router: new RouterService(),
             },
           },
           args: {
