@@ -1,6 +1,7 @@
 import { renderComponent } from '@glimmer/core';
 import App from './App.js';
 import LocaleService from './services/LocaleService.js';
+import RouterService from './services/RouterService.js';
 
 document.addEventListener(
   'DOMContentLoaded',
@@ -11,6 +12,7 @@ document.addEventListener(
       owner: {
         services: {
           locale: new LocaleService('en_US'),
+          router: new RouterService(),
         },
       },
     });

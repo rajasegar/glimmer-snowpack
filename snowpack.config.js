@@ -31,20 +31,15 @@ module.exports = {
       },
     ],
   ],
-  install: [],
-  installOptions: {
-    /* ... */
-  },
   devOptions: {
-    /* ... */
   },
   buildOptions: {
     minify: false
   },
-  proxy: {
-    /* ... */
-  },
   alias: {
     /* ... */
   },
+  "routes": [
+    {"match": "routes", "src": ".*", "dest": "/index.html"}
+  ]
 };
